@@ -1,0 +1,23 @@
+{
+  "name": "behavior-driven-shopping-list",
+  "version": "0.0.1",
+  "description": "BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurL808/behavior-driven-shopping-list.git"
+  },
+  "author": "Arthur & Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurL808/behavior-driven-shopping-list/issues"
+  },
+  "homepage": "https://github.com/ArthurL808/behavior-driven-shopping-list#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
