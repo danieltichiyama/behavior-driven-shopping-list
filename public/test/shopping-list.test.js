@@ -82,4 +82,28 @@ describe("shoppingList", function() {
       list.items.should.not.contain(torch);
     });
   });
+  describe("render()", function() {
+    var result = new ShoppingList();
+    it("should be a function", function() {
+      ShoppingList.render.should.be.a("function");
+    });
+    it("should return a string", function() {
+      expect(result.render()).to.be.a("string");
+    });
+    it("should concatenate the result", function() {
+      var shop = new ShoppingListItem("can", "cannot...");
+      var apple = new ShoppingListItem(
+        "apple",
+        "one a day keeps the dentist away."
+      );
+      var torch = new ShoppingListItem("torch", "light the way mutha fucka.");
+
+      result.addItem(shop);
+      result.addItem(apple);
+      result.addItem(torch);
+      expect(result.render()).to.equal(
+        `<ul>${shop.render()}${apple.render()}${torch.render()}</ul>`
+      );
+    });
+  });
 });
