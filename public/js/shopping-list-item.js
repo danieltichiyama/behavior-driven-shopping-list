@@ -14,6 +14,7 @@ class ShoppingListItem {
   unCheck() {
     this.isDone = false;
   }
+
   render(name, description, isDone) {
     return `<li class = "completed_${this.isDone}"><span>${
       this.name

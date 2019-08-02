@@ -85,7 +85,7 @@ describe("shoppingList", function() {
   describe("render()", function() {
     var result = new ShoppingList();
     it("should be a function", function() {
-      ShoppingList.render.should.be.a("function");
+      result.render.should.be.a("function");
     });
     it("should return a string", function() {
       expect(result.render()).to.be.a("string");

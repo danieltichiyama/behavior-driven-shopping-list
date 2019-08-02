@@ -9,16 +9,25 @@ class ShoppingList {
     }
     this.items.push(item);
   }
-  removeItem(item){
-    if(!(item instanceof ShoppingListItem)){
-        if(item == null){
-         return this.items.pop()
-        }
-        throw 'error'
-    }else if(this.items.indexOf(item) == -1){
-        throw 'error'
+
+  removeItem(item) {
+    if (!(item instanceof ShoppingListItem)) {
+      if (item == null) {
+        return this.items.pop();
+      }
+      throw "error";
+    } else if (this.items.indexOf(item) == -1) {
+      throw "error";
     }
-    let dex = this.items.indexOf(item)
-    this.items.splice(dex,1)
+    let dex = this.items.indexOf(item);
+    this.items.splice(dex, 1);
+  }
+
+  render() {
+    return (
+      this.items.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue.render();
+      }, "<ul>") + "</ul>"
+    );
   }
 }
