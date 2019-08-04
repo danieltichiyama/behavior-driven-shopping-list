@@ -24,12 +24,10 @@ class ShoppingList {
   }
 
   render() {
-    let htmlBlock = "<ul>";
-    for (let i = 0; i < this.items.length; i++) {
-      htmlBlock += this.items[i].render(i);
-    }
-    htmlBlock += "</ul>";
-
-    return htmlBlock;
+    return (
+      this.items.reduce(function(accumulator, currentValue, idx) {
+        return accumulator + currentValue.render(idx);
+      }, "<ul>") + "</ul>"
+    );
   }
 }

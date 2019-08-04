@@ -20,6 +20,8 @@ class ShoppingListItem {
       this.isDone
     }"><input type="checkbox" class="checkbox" onchange = "changeCheckedStatus(${idx},this)"/><span>${
       this.name
-    }</span> <span>${this.description}</span></li>`;
+    }</span> <span>${
+      this.description
+    }</span><button  onclick = "removeItemButtonClicked (${idx})">X</button></li>`;
   }
 }

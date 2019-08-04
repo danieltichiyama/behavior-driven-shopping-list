@@ -1,0 +1,32 @@
+body {
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+#addItemForm {
+  height: 30px;
+  padding: 10px 0 0px 10px;
+}
+
+#content {
+  height: 90vh;
+  width: 80%;
+
+  ul {
+    list-style: none;
+    width: 100%;
+
+    li {
+      width: inherit;
+      background: rgb(255, 184, 52);
+      height: 30px;
+      margin: 5px;
+      padding: 10px 0 0 5px;
+      border: rgb(223, 118, 48) solid 2px;
+      border-radius: 5px;
+
+      input:checkbox {
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 "use strict";
 
 let shoppingList = new ShoppingList();
+let content = document.getElementById("content");
 
 let button = document.getElementById("addShoppingListItemButton");
 
@@ -12,9 +13,7 @@ button.addEventListener("click", function addToShoppingList(event) {
 
   shoppingList.addItem(shoppingListItem);
 
-  let listContent = shoppingList.render();
-  let content = document.getElementById("content");
-  content.innerHTML = listContent;
+  content.innerHTML = shoppingList.render();
 
   checkChecked();
 
@@ -22,16 +21,15 @@ button.addEventListener("click", function addToShoppingList(event) {
 });
 
 let changeCheckedStatus = function(idx, checkbox) {
-  if ((checkbox.checked = true)) {
-    shoppingList.items[idx].check();
-  } else {
+  if (!checkbox.checked === true) {
     shoppingList.items[idx].uncheck();
+  } else {
+    shoppingList.items[idx].check();
   }
 };
 
 function checkChecked() {
   let listArr = document.querySelectorAll("li");
-  console.log(listArr);
   for (let i = 0; i < listArr.length; i++) {
     let checkbox = listArr[i].children[0];
     if (shoppingList.items[i].isDone) {
@@ -40,4 +38,10 @@ function checkChecked() {
       checkbox.checked = false;
     }
   }
+}
+
+function removeItemButtonClicked(idx) {
+  shoppingList.removeItem(shoppingList.items[idx]);
+  content.innerHTML = shoppingList.render();
+  checkChecked();
 }

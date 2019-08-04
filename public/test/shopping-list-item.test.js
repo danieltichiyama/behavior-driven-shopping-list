@@ -57,7 +57,7 @@ describe("ShoppingListItem", function() {
 
     it("should contain a list element", function() {
       var result = avocado.render();
-      expect(result).to.equal(
+      expect(result).to.contain(
         `<li class = "completed_${avocado.isDone}"><span>${
           avocado.name
         }</span> <span>${avocado.description}</span></li>`

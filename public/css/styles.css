@@ -1,0 +1,22 @@
+body {
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0; }
+
+#addItemForm {
+  height: 30px;
+  padding: 10px 0 0px 10px; }
+
+#content {
+  height: 90vh;
+  width: 80%; }
+  #content ul {
+    list-style: none;
+    width: 100%; }
+    #content ul li {
+      width: inherit;
+      background: #ffb834;
+      height: 30px;
+      margin: 5px;
+      padding: 10px 0 0 5px;
+      border: #df7630 solid 2px;
+      border-radius: 5px; }

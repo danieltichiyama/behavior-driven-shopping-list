@@ -18,6 +18,9 @@
   "homepage": "https://github.com/ArthurL808/behavior-driven-shopping-list#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
     "mocha": "^6.2.0"
   }
 }
