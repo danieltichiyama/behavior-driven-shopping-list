@@ -1,7 +1,7 @@
 # Behavior Driven Shopping List
 
 Fork and clone this project.  
-Goal: Create a working, single page app.  
+Goal: Create a working, single page app.
 
 This project has 3 parts.
 
@@ -9,9 +9,9 @@ This project has 3 parts.
 2. Building the Shopping List classes to make tests pass
 3. Rendering a shopping list to the browser
 
-use `http-server` or `live-server` to test and run your app  
+use `http-server` or `live-server` to test and run your app
 
-----
+---
 
 ## 1. The Shopping List BDD tests
 
@@ -30,7 +30,8 @@ behavior-driven-shopping-list
 │   └── mocha
 ├── README.md
 └── package.json
-````
+```
+
 Write tests for the shopping list application.  
 The tests should describe the following shopping list functionality:
 
@@ -43,25 +44,23 @@ The tests should describe the following shopping list functionality:
 - ShoppingListItem has a constructor method that accepts 2 arguments, `name` and `description`
   - the constructor method sets the new instances `name` and `description` properties using the arguments passed in
 - ShoppingListItem has a method named `check`
-  -  calling the instance's `check` method will set it's `isDone` property to true
+  - calling the instance's `check` method will set it's `isDone` property to true
 - ShoppingListItem has a method named `uncheck`
-  -  calling the instance's `uncheck` method will set it's `isDone` property to false
+  - calling the instance's `uncheck` method will set it's `isDone` property to false
 - ShoppingListItem has a method named `render`
-  -  calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in `<li>` tags.  `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`.   example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
+  - calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in `<li>` tags. `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`. example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
 
 hint: Use ES6 [string templates](http://tc39wiki.calculist.org/es6/template-strings/) for your render method
 
 example:
 
 ```js
-
 let someHtmlOutput = `<ul>
   <li class="completed_false">
     <span>Avocado</span>
     <span>Must be eaten immediately.</span>
   </li>
 <ul>`;
-
 ```
 
 #### ShoppingList
@@ -79,19 +78,17 @@ let someHtmlOutput = `<ul>
 - ShoppingList has a method named `render`
   - calling the instance's `render` method will concatenate the result of calling `render()` on each item in this object's `items` array, wrapping it in a `<ul>` tags, and returning an html formatted string. ex: `<ul>...[all the li elements from ShoppingListItem.render()]...</ul>`
 
-
 ### test.html
 
 Standard html5 document
 Before the end of this body tag, include your test library dependencies and your test file. You should be able to run your tests with all tests failing, commit and push your work.
 [browser setup.](https://mochajs.org/#running-mocha-in-the-browser)
 
-
 ## 2. Building the Shopping List classes to make tests pass
 
 Create implementation files.  
 `shopping-list-item.js`  
-`shopping-list.js`  
+`shopping-list.js`
 
 ```bash
 behavior-driven-shopping-list
@@ -108,28 +105,24 @@ behavior-driven-shopping-list
 │   └── mocha
 ├── README.md
 └── package.json
-````
+```
 
 ### index.html
 
 Standard html5 document
 Before the end of this body tag, include your 2 shopping list scripts.
 
-
-### shopping-list-item.js  
+### shopping-list-item.js
 
 Create a class that defines `ShoppingListItem`.  
 `ShoppingListItem` will have all the properties and methods defined in the BDD spec above.
 
-
-### shopping-list.js  
+### shopping-list.js
 
 Create a class that defines `ShoppingList`.  
 `ShoppingList` will have all the properties and methods defined in the BDD spec above.
 
-
 Once all tests pass, commit and push.
-
 
 ## 3. Rendering a shopping list to the browser
 
@@ -137,7 +130,7 @@ Create implementation files.
 `index.html`  
 `shopping-list-item.js`  
 `shopping-list.js`  
-`app.js`  
+`app.js`
 
 ```bash
 behavior-driven-shopping-list
@@ -156,7 +149,7 @@ behavior-driven-shopping-list
 │   └── mocha
 ├── README.md
 └── package.json
-````
+```
 
 ### index.html
 
@@ -188,8 +181,7 @@ Commit and push your work
 
 ## 4. Check and Uncheck shopping list items
 
-Modify the ShoppingListItem `render()` method to include a `checkbox` input. Add an `onchange` event listener to this checkbox that will call a function named `changeCheckedStatus(idx, checkbox)` where 'idx' is the position (array index) of the ShoppingListItem, and 'checkbox' is the actual checkbox element. [http://www.w3schools.com/jsref/prop_checkbox_checked.asp](http://www.w3schools.com/jsref/prop_checkbox_checked.asp)  
-
+Modify the ShoppingListItem `render()` method to include a `checkbox` input. Add an `onchange` event listener to this checkbox that will call a function named `changeCheckedStatus(idx, checkbox)` where 'idx' is the position (array index) of the ShoppingListItem, and 'checkbox' is the actual checkbox element. [http://www.w3schools.com/jsref/prop_checkbox_checked.asp](http://www.w3schools.com/jsref/prop_checkbox_checked.asp)
 
 ### app.js
 
@@ -199,12 +191,11 @@ create a `changeCheckedStatus` function that accepts two arguments, idx and chec
 it will find a ShoppingListItem based on the idx passed in to the function.  
 determine if the checkbox that has been clicked, is now checked or not checked. [http://www.w3schools.com/jsref/event_onchange.asp](http://www.w3schools.com/jsref/event_onchange.asp)  
 if the checkbox is checked,
- invoke the shoppingListItem object's `check()` method.
+invoke the shoppingListItem object's `check()` method.
 if the checkbox is not checked,  
  invoke the shoppingListItem object's `uncheck()` method.
 
 Commit and push your work.
-
 
 ## 5. Remove shopping list items
 
@@ -216,13 +207,14 @@ Modify the ShoppingListItem `render()` method to include a `button` element with
 
 Create a `removeItemButtonClicked` function that accepts a single argument, idx.  
 It will find a ShoppingListItem based on the idx passed in to the function.  
-It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.  
+It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.
 
 Commit and push your work.
 
 ## Stretch Goals
+
 When you finish all of the items above, you can work on these additonal stretch goals.
 
-* Ask a TA or instructor for a code review.
-* When you check an item off on your shopping list, strike it out on the DOM.
-* Make it look like a shopping list app that you would want to use. Great creative with the UI and UX.
+- Ask a TA or instructor for a code review.
+- When you check an item off on your shopping list, strike it out on the DOM.
+- Make it look like a shopping list app that you would want to use. Great creative with the UI and UX.

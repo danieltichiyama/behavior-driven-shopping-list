@@ -1,0 +1,26 @@
+{
+  "name": "behavior-driven-shopping-list",
+  "version": "0.0.1",
+  "description": "BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurL808/behavior-driven-shopping-list.git"
+  },
+  "author": "Arthur & Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurL808/behavior-driven-shopping-list/issues"
+  },
+  "homepage": "https://github.com/ArthurL808/behavior-driven-shopping-list#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "mocha": "^6.2.0"
+  }
+}
